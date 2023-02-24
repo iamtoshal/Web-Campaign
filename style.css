@@ -1,0 +1,107 @@
+.text-center {
+    text-align: center;
+}
+
+h5 {
+    font-size: 32px;
+}
+
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.container .face {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: 0 20px;
+    cursor: pointer;
+    background-color: yellow;
+}
+
+.container .face:before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    top: 180px;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    background-color: #b57700;
+    border: 3px solid #f44336;
+    transition: 0.5s;
+}
+
+.container .face:hover:before {
+    top: 210px;
+    width: 150px;
+    height: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    transition: 0.5s;
+    background-color: #9d0b00;
+    border: none;
+}
+
+.container .face .eyes {
+    position: relative;
+    top: -40px;
+    display: flex;
+}
+
+.container .face .eyes .eye {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 15px;
+    position: relative;
+}
+
+.container .face .eyes .eye:before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 52px;
+}
+
+.container .face:hover {
+    background: linear-gradient(#ff4433, #f44336, #e5ff00);
+}
+
+.container .face:hover .eyes .eye {
+    animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+        border: 2px dotted black;
+    }
+
+    50% {
+        transform: rotate(360deg);
+        border: 2px solid #011;
+    }
+
+    100% {
+        transform: rotate(0deg);
+        border: 2px solid #333;
+    }
+
+}
